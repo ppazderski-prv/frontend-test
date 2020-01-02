@@ -1,3 +1,39 @@
+@import './src/styles/variables';
+
 body {
   font-family: 'Soleil', sans-serif;
+}
+
+.m-t-10 {
+  margin-top: 10px;
+}
+
+.button {
+  transition: background-color ease-in 0.3s;
+  background-color: $button-bg-color;
+  color: $button-text-color;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px 35px;
+  font-size: 14px;
+  &:hover {
+    background-color: lighten($button-bg-color, 20%);
+  }
+}
+
+#page {
+  background-color: $bg-color;
+  height: 100vh;
+  display: flex;
+  padding-top: 8rem;
+  align-items: center;
+  flex-direction: column;
+  .error-page-code {
+    font-size: 8rem;
+    font-weight: 100;
+  }
+  .error-page-text {
+    font-size: 1rem;
+  }
 }
