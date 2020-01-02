@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  frontend:
+    build: docker/frontend
+    user: "1000:1000"
+    volumes:
+      - .:/app:consistent
+    ports:
+      - "4200:4200"
+  backend:
+    build: docker/backend
+    user: "1000:1000"
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8000:8000"

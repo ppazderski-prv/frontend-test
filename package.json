@@ -4,7 +4,6 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start:server": "node node_modules/json-server/lib/cli/bin.js db.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -26,7 +25,7 @@
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.900.0-next.19",
+    "@angular-devkit/build-angular": "^0.900.0-rc.7",
     "@angular/cli": "~9.0.0-next.19",
     "@angular/compiler-cli": "~9.0.0-rc.1",
     "@angular/language-service": "~9.0.0-rc.1",
@@ -36,7 +35,6 @@
     "codelyzer": "^5.1.2",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
-    "json-server": "^0.15.1",
     "karma": "~4.3.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage-istanbul-reporter": "~2.1.0",
