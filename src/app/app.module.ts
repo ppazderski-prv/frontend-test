@@ -7,10 +7,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { NotFoundComponent } from './_components/not-found/not-found.component';
 import { LoginComponent } from './_components/login/login.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, NotFoundComponent, LoginComponent],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule, FlexLayoutModule],
+  declarations: [
+    AppComponent,
+    NotFoundComponent,
+    LoginComponent
+  ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
