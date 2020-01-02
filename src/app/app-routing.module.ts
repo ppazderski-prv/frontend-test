@@ -8,8 +8,16 @@ const routes: Routes = [
     loadChildren: () => import('./layout/layout.module').then(m => m.LayoutModule)
   },
   {
-    path: 'aaa',
+    path: 'home',
     component: HomeComponent,
+  },
+  {
+    path: '404',
+    component: HomeComponent
+  },
+  {
+    path: '**',
+    redirectTo: '/404'
   }
 ];
 

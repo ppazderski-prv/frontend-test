@@ -10,6 +10,7 @@ RUN apk add --no-cache bash
 RUN npm i -g @angular/cli
 
 EXPOSE 4200
+EXPOSE 9876
 
 ADD init.sh /init.sh
 

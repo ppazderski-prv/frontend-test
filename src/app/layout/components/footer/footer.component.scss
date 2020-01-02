@@ -1,0 +1,18 @@
+@import './src/styles/variables';
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  background-color: $secondary-bg-color;
+  left: $desktop-menu-width;
+  right: 0;
+  padding: 10px 10px 10px 0;
+  border-top: 1px solid $border-color;
+  text-align: right;
+  font-size: 12px;
+  a {
+    color: $nav-color;
+    opacity: 0.5;
+    text-decoration: none;
+  }
+}
