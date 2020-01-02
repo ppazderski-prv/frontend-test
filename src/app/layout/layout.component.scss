@@ -1,0 +1,9 @@
+@import './src/styles/variables';
+
+.content {
+  background-color: $main-background-color;
+  position: relative;
+  margin-top: $top-bar-height;
+  margin-left: $desktop-menu-width;
+  min-height: 100vh;
+}

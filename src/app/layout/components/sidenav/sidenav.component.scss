@@ -1,0 +1,23 @@
+@import './src/styles/variables';
+
+#side-menu {
+  width: $desktop-menu-width;
+  border-right: 1px solid $border-color;
+  position: fixed;
+  left: 0;
+  top: $top-bar-height;
+  padding: 40px 40px 0;
+  bottom: 0;
+  z-index: 1000;
+  background: $secondary-bg-color;
+  .side-menu__external-link {
+    text-align: center;
+    color: #002D4F;
+    font-size: 14px;
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    margin-top: 10px;
+    font-weight: 600;
+  }
+}

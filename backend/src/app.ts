@@ -5,15 +5,28 @@ const jsonServer = require("json-server");
 const bodyParser = require("body-parser");
 const jwt = require("jsonwebtoken");
 
+interface IUser {
+  id: number;
+  email: string;
+  username: string;
+  password: string;
+}
+
+interface IItem {
+  id: number;
+  title: string;
+  parent_id: number | null;
+}
+
 const server = jsonServer.create();
 const serverDefaults: any = jsonServer.defaults();
 const router = jsonServer.router("./data/db.json");
-const db: { items: any[], users: any[] } = JSON.parse(fs.readFileSync("./data/db.json", "UTF-8"));
+const db: { items: IItem[], users: IUser[] } = JSON.parse(fs.readFileSync("./data/db.json", "UTF-8"));
 
 const SECRET_KEY = "G1a2t3F4c5d36a78ca9A";
 const EXP_TIME = "1h";
 
-server.use(bodyParser.urlencoded({extended: true}));
+server.use(bodyParser.urlencoded({ extended: true }));
 server.use(bodyParser.json());
 server.use(serverDefaults);
 
@@ -25,20 +38,23 @@ function verifyToken(token): any {
   return  jwt.verify(token, SECRET_KEY, (err, decode) => decode !== undefined ?  decode : err);
 }
 
-function isAuthenticated({ email, password }): boolean {
-  return db.users.findIndex((user) => user.email === email && user.password === password) !== -1;
+function getUser({ email, password }): IUser | null {
+  return db.users.find((user) => user.email === email && user.password === password);
 }
 
 server.post("/auth/login", (req, res) => {
   const { email, password } = req.body;
-  console.log((req.body));
-  if (isAuthenticated({ email, password }) === false) {
+  const user = getUser({ email, password });
+  if (!user) {
     const status = 401;
     const message = "Error - Incorrect email or password";
     res.status(status).json({ status, message });
     return;
   }
-  const token = createToken({ email, password });
+  const obfuscatedUser =  Object.assign({}, user);
+  delete obfuscatedUser.password;
+
+  const token = createToken(obfuscatedUser);
   res.status(200).json({ token });
 });
 

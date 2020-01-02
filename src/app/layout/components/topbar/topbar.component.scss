@@ -1,0 +1,16 @@
+@import './src/styles/variables';
+
+#top-bar {
+  width: 100%;
+  height: $top-bar-height;
+  padding: 0 40px;
+  border: 1px solid $border-color;
+  background-color: $secondary-bg-color;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  .top-bar__user {
+    color: #002D4F;
+    cursor: pointer;
+  }
+}
