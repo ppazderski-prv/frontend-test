@@ -4,8 +4,61 @@ body {
   font-family: 'Soleil', sans-serif;
 }
 
+#page {
+  background-color: $bg-color;
+  height: 100vh;
+  .error-page-code {
+    font-size: 8rem;
+    font-weight: 100;
+  }
+  .error-page-text {
+    font-size: 1rem;
+  }
+}
+
 .m-t-10 {
   margin-top: 10px;
+}
+
+.m-t-20 {
+  margin-top: 20px;
+}
+
+.card {
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  background-color: $secondary-bg-color;
+  max-width: 20rem;
+  .card__title {
+    width: 100%;
+    border-bottom: 1px solid $border-color;
+    padding: 20px;
+    font-size: 18px;
+  }
+  .card__content {
+    padding: 20px;
+  }
+}
+
+.input-wrapper {
+  border: 1px solid $input-border-color;
+  border-radius: 5px;
+  padding: 3px 10px;
+  width: 100%;
+  &:focus {
+    border: 1px solid red;
+  }
+  input {
+    border: none;
+    &:focus {
+      border: none;
+      outline: 0;
+    }
+    &::placeholder {
+      color: $placeholder-text-color;
+      font-weight: 200;
+    }
+  }
 }
 
 .button {
@@ -17,23 +70,10 @@ body {
   border-radius: 5px;
   padding: 10px 35px;
   font-size: 14px;
+  border: none;
   &:hover {
     background-color: lighten($button-bg-color, 20%);
   }
 }
 
-#page {
-  background-color: $bg-color;
-  height: 100vh;
-  display: flex;
-  padding-top: 8rem;
-  align-items: center;
-  flex-direction: column;
-  .error-page-code {
-    font-size: 8rem;
-    font-weight: 100;
-  }
-  .error-page-text {
-    font-size: 1rem;
-  }
-}
+

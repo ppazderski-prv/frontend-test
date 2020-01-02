@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './_components/not-found/not-found.component';
+import { LoginComponent } from './_components/login/login.component';
 
 const routes: Routes = [
   {
@@ -9,8 +9,8 @@ const routes: Routes = [
     loadChildren: () => import('./layout/layout.module').then(m => m.LayoutModule)
   },
   {
-    path: 'home',
-    component: HomeComponent,
+    path: 'login',
+    component: LoginComponent,
   },
   {
     path: '404',

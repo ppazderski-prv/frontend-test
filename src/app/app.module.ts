@@ -4,12 +4,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './_components/not-found/not-found.component';
+import { LoginComponent } from './_components/login/login.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NotFoundComponent],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
+  declarations: [AppComponent, NotFoundComponent, LoginComponent],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule, FlexLayoutModule],
   providers: [],
   bootstrap: [AppComponent]
 })
