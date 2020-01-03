@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { JwtService } from '../../../services/jwt.service';
+import { ITokenUser } from '../../../interfaces/i-token-user';
 
 @Component({
   selector: 'app-top-bar',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./top-bar.component.scss']
 })
 export class TopBarComponent implements OnInit {
+  public tokenUser: ITokenUser;
 
-  constructor() { }
+  constructor(private jwtService: JwtService) { }
 
   ngOnInit() {
+    this.tokenUser = this.jwtService.tokenUser;
   }
-
 }

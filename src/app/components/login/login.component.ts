@@ -4,6 +4,9 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { AuthApiService } from '../../services/auth-api.service';
 import { AuthData } from '../../models/auth-data';
 import { JwtService } from '../../services/jwt.service';
+import { Router } from '@angular/router';
+import { IJwtToken } from '../../interfaces/i-jwt-token';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @UntilDestroy()
 @Component({
@@ -15,12 +18,13 @@ export class LoginComponent implements OnInit {
   public form: FormGroup;
   public submitClicked = false;
   public submitting = false;
-  public backendErrorResponse = false;
+  public backendErrorResponse: string;
 
   constructor(
     private fb: FormBuilder,
     private authApiService: AuthApiService,
-    private jwtService: JwtService
+    private jwtService: JwtService,
+    private router: Router
   ) {
   }
 
@@ -40,13 +44,14 @@ export class LoginComponent implements OnInit {
     this.submitClicked = true;
     if (this.form.valid) {
       this.submitting = true;
-      this.backendErrorResponse = false;
-      this.authApiService.login(this.form.value as AuthData).pipe(untilDestroyed(this)).subscribe((data) => {
+      this.backendErrorResponse = null;
+      this.authApiService.login(this.form.value as AuthData).pipe(untilDestroyed(this)).subscribe((data: IJwtToken) => {
         this.submitting = false;
         this.jwtService.setTokenData(data.token);
-      }, () => {
+        this.router.navigate(['/']).then();
+      }, (response: HttpErrorResponse) => {
         this.submitting = false;
-        this.backendErrorResponse = true;
+        this.backendErrorResponse = response.error.message;
       });
     }
   }

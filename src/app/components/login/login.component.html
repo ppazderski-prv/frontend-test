@@ -34,7 +34,7 @@
           </div>
         </div>
         <div class="form-error" [ngClass]="{ 'form-error__visible': backendErrorResponse }">
-          Incorrect e-mail and password combination.
+          {{ backendErrorResponse }}
         </div>
         <button [disabled]="submitting" class="button m-t-20" type="submit">LOGIN</button>
       </form>
