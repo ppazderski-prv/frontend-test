@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   public backendErrorResponse: string;
 
   constructor(
-    private fb: FormBuilder,
+    private formBuilder: FormBuilder,
     private authApiService: AuthApiService,
     private jwtService: JwtService,
     private router: Router
@@ -34,9 +34,9 @@ export class LoginComponent implements OnInit {
   }
 
   private buildForm(): void {
-    this.form = this.fb.group({
-      email: this.fb.control(null, [Validators.required, Validators.email]),
-      password: this.fb.control(null, [Validators.required])
+    this.form = this.formBuilder.group({
+      email: this.formBuilder.control(null, [Validators.required, Validators.email]),
+      password: this.formBuilder.control(null, [Validators.required])
     });
   }
 
@@ -45,7 +45,8 @@ export class LoginComponent implements OnInit {
     if (this.form.valid) {
       this.submitting = true;
       this.backendErrorResponse = null;
-      this.authApiService.login(this.form.value as AuthData).pipe(untilDestroyed(this)).subscribe((data: IJwtToken) => {
+      this.authApiService.login(this.form.value as AuthData).pipe(untilDestroyed(this)).subscribe(
+        (data: IJwtToken) => {
         this.submitting = false;
         this.jwtService.setTokenData(data.token);
         this.router.navigate(['/']).then();

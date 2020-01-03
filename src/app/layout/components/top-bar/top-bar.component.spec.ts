@@ -16,6 +16,7 @@ describe('TopBarComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(TopBarComponent);
     component = fixture.componentInstance;
+    component.tokenUser = { id: 1, avatar: 'a', username: 'a', email: 'a', exp: 1, iat: 1 };
     fixture.detectChanges();
   });
 

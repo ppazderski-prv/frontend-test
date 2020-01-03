@@ -5,7 +5,6 @@ import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
 import { IJwtToken } from '../interfaces/i-jwt-token';
 import { AuthData } from '../models/auth-data';
-import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
