@@ -71,9 +71,28 @@ body {
     }
   }
   .custom-input__error {
+    transition: all ease-in 0.4s;
     color: $input-color-error;
     font-size: 12px;
-    margin-top: 5px;
+    margin-top: 2px;
+    opacity: 0;
+    max-height: 0;
+    &.custom-input__error-visible {
+      opacity: 1;
+      max-height: 30px;
+    }
+  }
+}
+
+.form-error {
+  transition: max-height ease-in 0.4s;
+  color: $input-color-error;
+  font-size: 12px;
+  max-height: 0;
+  opacity: 0;
+  &.form-error__visible {
+    opacity: 1;
+    max-height: 30px;
   }
 }
 
