@@ -6,10 +6,11 @@ import { ListComponent } from './components/list/list.component';
 import { CdkTreeModule } from '@angular/cdk/tree';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PreviewComponent } from './components/preview/preview.component';
 
 
 @NgModule({
-  declarations: [ListComponent],
+  declarations: [ListComponent, PreviewComponent],
   imports: [
     CommonModule,
     ItemRoutingModule,

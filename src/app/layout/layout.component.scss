@@ -3,11 +3,22 @@
 #content {
   background-color: $bg-color;
   position: relative;
+  margin-left: $desktop-menu-width;
   margin-top: $top-bar-height;
   min-height: calc(100vh - #{$top-bar-height});
-  padding: 40px 10px 60px;
-  @media screen and (min-width: $desktop-min-width) {
-    margin-left: $desktop-menu-width;
-    padding: 40px 70px 60px;
+  padding: 40px 70px 60px;
+  &.content__mobile {
+    margin-left: 0;
+    padding: 20px 10px 60px;
   }
+}
+#mobile-menu-overlay {
+  transition: all ease-in 0.8s;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 998;
+  background-color: rgba(0,0,0,0.2);
 }

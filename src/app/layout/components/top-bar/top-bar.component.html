@@ -1,7 +1,11 @@
-<div fxLayout="row" fxLayoutAlign="space-between center" id="top-bar">
+<div fxLayout="row" fxLayoutAlign="space-between center" ngClass.lt-md="top-bar__mobile"  id="top-bar">
+  <div fxShow.lt-md="true" fxShow.gt-md="false" class="top-bar__menu" (click)="onMenuClick()">
+    <img src="assets/images/hamburger.svg" alt="menu" />
+  </div>
   <img class="top-bar__logo" src="assets/images/logo.svg" alt="cobiro" />
   <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" class="top-bar__user">
-    <img *ngIf="tokenUser" class="top-bar__profile-pic" src="assets/avatars/{{ tokenUser.avatar }}" alt="{{ tokenUser.username }}" />
+    <img *ngIf="tokenUser" class="top-bar__profile-pic" src="assets/avatars/{{ tokenUser.avatar }}"
+         alt="{{ tokenUser.username }}" />
     <span *ngIf="tokenUser" class="top-bar__user-name">{{ tokenUser.username }}</span>
     <img src="assets/images/arrow-down.svg" alt="arrow-down" />
   </div>

@@ -4,14 +4,14 @@
   position: fixed;
   bottom: 0;
   background-color: $secondary-bg-color;
-  left: 0;
+  left: $desktop-menu-width;
   right: 0;
   padding: 10px 10px 10px 0;
   border-top: 1px solid $border-color;
   text-align: right;
   font-size: 12px;
-  @media screen and (min-width: $desktop-min-width) {
-      left: $desktop-menu-width;
+  &.footer__mobile {
+    left: 0;
   }
   a {
     color: $nav-color;

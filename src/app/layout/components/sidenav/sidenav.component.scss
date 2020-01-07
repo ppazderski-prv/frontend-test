@@ -3,12 +3,24 @@
 #side-menu {
   width: $desktop-menu-width;
   position: fixed;
-  left: 0;
+  left: 0px;
   top: $top-bar-height;
   padding: 40px 40px 0;
   bottom: 0;
-  z-index: 1000;
+  z-index: 999;
   background: $secondary-bg-color;
+  display: none;
+  &.side-menu__mobile {
+    display: block;
+    transition: left ease-in 0.3s;
+    left: -$desktop-menu-width;
+    &.side-menu__visible {
+      left: 0;
+    }
+  }
+  &.side-menu__desktop {
+    display: block;
+  }
   .side-menu__external-link {
     text-align: center;
     color: $secondary-text-color;
