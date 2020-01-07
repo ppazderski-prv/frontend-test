@@ -1,0 +1,26 @@
+@import './src/styles/variables';
+
+.tree-item {
+  border: 1px solid $secondary-border-color;
+  background-color: $secondary-bg-color;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 0 20px;
+  height: 80px;
+  span {
+    font-weight: 600;
+  }
+  @media screen and (min-width: $desktop-min-width) {
+    span {
+      font-size: 24px;
+    }
+  }
+}
+.children-nodes {
+  margin-left: 20px;
+}
+
+.example-viewport {
+  height: 80px;
+  width: 100%;
+}

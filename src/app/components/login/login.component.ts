@@ -45,7 +45,8 @@ export class LoginComponent implements OnInit {
     if (this.form.valid) {
       this.submitting = true;
       this.backendErrorResponse = null;
-      this.authApiService.login(this.form.value as AuthData).pipe(untilDestroyed(this)).subscribe(
+      const authData = new AuthData(this.form.get('email').value, this.form.get('password').value);
+      this.authApiService.login(authData).pipe(untilDestroyed(this)).subscribe(
         (data: IJwtToken) => {
         this.submitting = false;
         this.jwtService.setTokenData(data.token);

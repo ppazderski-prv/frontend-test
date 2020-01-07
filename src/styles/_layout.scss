@@ -47,8 +47,12 @@ body {
     border-radius: 5px;
     padding: 3px 10px;
     width: 100%;
+    background-color: $secondary-bg-color;
+    min-height: 40px;
     input {
       border: none;
+      width: 100%;
+      min-height: 34px;
       &:focus {
         border: none;
         outline: 0;
@@ -103,9 +107,12 @@ body {
   text-decoration: none;
   cursor: pointer;
   border-radius: 5px;
-  padding: 10px 35px;
+  padding: 5px 15px;
   font-size: 14px;
   border: none;
+  @media screen and (min-width: $desktop-min-width) {
+    padding: 10px 35px;
+  }
   &:hover {
     background-color: lighten($button-bg-color, 10%);
   }

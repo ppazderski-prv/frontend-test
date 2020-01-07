@@ -19,4 +19,6 @@ export class AuthApiService {
   public login(authData: AuthData): Observable<IJwtToken> {
     return this.httpClient.post<IJwtToken>(AuthApiService.URL, authData);
   }
+
+
 }

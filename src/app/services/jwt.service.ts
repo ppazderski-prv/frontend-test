@@ -39,4 +39,8 @@ export class JwtService {
     localStorage.clear();
     this.tokenSubject.next(null);
   }
+
+  public isAuthenticated(): boolean {
+    return !!this.token;
+  }
 }

@@ -4,6 +4,10 @@
   background-color: $bg-color;
   position: relative;
   margin-top: $top-bar-height;
-  margin-left: $desktop-menu-width;
   min-height: calc(100vh - #{$top-bar-height});
+  padding: 40px 10px 60px;
+  @media screen and (min-width: $desktop-min-width) {
+    margin-left: $desktop-menu-width;
+    padding: 40px 70px 60px;
+  }
 }

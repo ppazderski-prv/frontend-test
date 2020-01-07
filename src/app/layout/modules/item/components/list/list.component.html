@@ -1,0 +1,19 @@
+<div class="custom-input">
+  <div class="custom-input__wrapper">
+    <label fxLayout="row">
+      <input [formControl]="searchControl" type="text" placeholder="Search"/>
+      <img src="assets/images/search.svg" alt="search" />
+    </label>
+  </div>
+</div>
+<cdk-tree [dataSource]="itemsNestedDataSource" [treeControl]="nestedTreeControl">
+  <cdk-nested-tree-node *cdkTreeNodeDef="let node">
+    <div class="tree-item" fxLayout="row" fxLayoutAlign="space-between center">
+      <span>{{node.title}}</span>
+      <a class="button" routerLink="/">Button</a>
+    </div>
+    <div class="children-nodes" *ngIf="node.children.length">
+      <ng-container cdkTreeNodeOutlet></ng-container>
+    </div>
+  </cdk-nested-tree-node>
+</cdk-tree>
