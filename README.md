@@ -25,8 +25,10 @@ As i implemented a simple JWT structure just not to mock the user data show in t
 
 Credentials are:
 
-###login (email): morten@email.com
-###password: pass
+```
+login (email): morten@email.com
+password: pass
+```
 
 You can change the data in mocked db.json file inside `backend/data` folder
 
