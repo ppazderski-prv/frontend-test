@@ -41,11 +41,17 @@ export class ListComponent implements OnInit {
     });
   }
 
+  public navigateToDetails(itemId: number): void {
+    const queryParams = this.searchControl.value.length ? { q: this.searchControl.value } : {};
+    this.router.navigate(['items/' + itemId], { queryParams }).then();
+  }
+
   private createSearch() {
     this.searchControl = new FormControl(this.getSearchQuery());
     this.searchControl.valueChanges.pipe(untilDestroyed(this)).pipe(debounceTime(300)).subscribe((val) => {
+      const queryParams = this.searchControl.value.length ? { q: this.searchControl.value } : {};
       this.router.navigate([], {
-        queryParams: { q: this.searchControl.value },
+        queryParams,
         relativeTo: this.route
       }).then();
     });

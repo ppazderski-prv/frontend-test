@@ -10,7 +10,7 @@
   <cdk-nested-tree-node *cdkTreeNodeDef="let node">
     <div class="tree-item" fxLayout="row" ngClass.lt-md="tree-item__mobile" fxLayoutAlign="space-between center">
       <span>{{node.title}}</span>
-      <a class="button" [routerLink]="'/items/' + node.id">Button</a>
+      <a class="button"  (click)="navigateToDetails(node.id)">Button</a>
     </div>
     <div class="children-nodes" ngClass.lt-md="children-nodes__mobile" *ngIf="node.children.length">
       <ng-container cdkTreeNodeOutlet></ng-container>

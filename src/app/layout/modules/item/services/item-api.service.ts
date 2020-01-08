@@ -21,6 +21,10 @@ export class ItemApiService {
     }).pipe(map(res => this.mapResponseAsTree(res)));
   }
 
+  public get(id: number): Observable<IItem> {
+    return this.httpClient.get<IItem>(ItemApiService.URL + '/' + id);
+  }
+
   private mapResponseAsTree(data: IItem[]): IItem[] {
     const relationMap = {};
     const result = [];

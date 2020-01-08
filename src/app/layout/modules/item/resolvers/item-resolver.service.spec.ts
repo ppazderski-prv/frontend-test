@@ -1,16 +1,16 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ItemsResolverService } from './items-resolver.service';
+import { ItemResolverService } from './item-resolver.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-describe('ItemsResolverService', () => {
-  let service: ItemsResolverService;
+describe('ItemResolverService', () => {
+  let service: ItemResolverService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule]
     });
-    service = TestBed.inject(ItemsResolverService);
+    service = TestBed.inject(ItemResolverService);
   });
 
   it('should be created', () => {

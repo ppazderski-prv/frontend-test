@@ -22,4 +22,8 @@ export class LayoutComponent implements OnInit {
     });
   }
 
+  public onMobileOverlayClick(): void {
+    this.layoutService.toggleMobileMenu();
+  }
+
 }

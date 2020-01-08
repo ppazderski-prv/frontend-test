@@ -3,22 +3,19 @@ import { Routes, RouterModule } from '@angular/router';
 import { ListComponent } from './components/list/list.component';
 import { ItemsResolverService } from './resolvers/items-resolver.service';
 import { PreviewComponent } from './components/preview/preview.component';
+import { ItemResolverService } from './resolvers/item-resolver.service';
 
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'list',
-    pathMatch: 'full'
-  },
-  {
-    path: 'list',
     component: ListComponent,
     resolve: { items: ItemsResolverService }
   },
   {
     path: ':id',
-    component: PreviewComponent
+    component: PreviewComponent,
+    resolve: { item: ItemResolverService }
   }
 ];
 

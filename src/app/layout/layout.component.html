@@ -1,6 +1,7 @@
 <app-top-bar></app-top-bar>
 <app-sidenav></app-sidenav>
-<div [fxShow.lt-md]="mobileMenuOverlay" fxShow.gt-md="false" id="mobile-menu-overlay"></div>
+<div [fxShow.lt-md]="mobileMenuOverlay" fxShow.gt-md="false" id="mobile-menu-overlay" (click)="onMobileOverlayClick()">
+</div>
 <section id="content" ngClass.lt-md="content__mobile">
   <router-outlet></router-outlet>
 </section>

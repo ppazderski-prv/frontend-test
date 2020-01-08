@@ -1,0 +1,19 @@
+@import './src/styles/variables';
+
+.item-preview {
+  border: 1px solid $border-color;
+  background-color: $secondary-bg-color;
+  padding: 10px;
+  .row {
+    margin-bottom: 10px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid $secondary-border-color;
+    span {
+      font-weight: 600;
+    }
+    &:last-of-type {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+  }
+}

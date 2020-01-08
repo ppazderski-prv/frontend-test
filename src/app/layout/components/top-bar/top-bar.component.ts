@@ -20,7 +20,7 @@ export class TopBarComponent implements OnInit {
     this.tokenUser = this.jwtService.tokenUser;
   }
 
-  public onMenuClick(): void {
+  public onMobileMenuClick(): void {
     this.layoutService.toggleMobileMenu();
   }
 }
