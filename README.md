@@ -1,28 +1,34 @@
 # Cobiro frontend test
 
 ## Pre requisits
-- Node v12.x
+- docker
+- docker-compose
 
-## Start the project
+## Start the development server with live preview
 
 ```
-// Fork the repo
-
-// Clone the project
-git@github.com:YOUR_GITHUB_USER/frontend-test.git
-
-// Change directory into project directory
-cd frontend-test
-
-// Install the project
-npm i
-
-// Run the application
-npm start
-
-// Run the mock server
-npm run start:server
+docker-compose up
 ```
+The site will be served at http://localhost:4200
+
+## Start the production mock server with live preview
+It builds and serves the compiled production version app 
+
+```
+docker-compose exec frontend npm run prod
+```
+The site will be served at http://localhost:8080
+
+## IMPORTANT
+
+As i implemented a simple JWT structure just not to mock the user data show in top bar, there is an additional login component.
+
+Credentials are:
+
+###login (email): morten@email.com
+###password: pass
+
+You can change the data in mocked db.json file inside `backend/data` folder
 
 ## Design spec
 
@@ -47,3 +53,5 @@ Here is a list of things we want you to do;
 - Make a sub page for the items so when you click the button you route to the sub page 
 <br />(Note you can get single item by calling `http://localhost:3000/items/:id`)
 - Make the layout responsive
+
+
