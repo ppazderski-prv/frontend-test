@@ -11,6 +11,7 @@ RUN npm i -g @angular/cli
 
 EXPOSE 4200
 EXPOSE 9876
+EXPOSE 8080
 
 ADD init.sh /init.sh
 

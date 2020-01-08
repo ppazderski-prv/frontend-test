@@ -4,11 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --aot=true",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points"
+    "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
+    "serve-prod": "cd dist/cas && node ../../node_modules/angular-http-server/lib/angular-http-server.js",
+    "prod": "npm run build && npm run serve-prod"
   },
   "private": true,
   "dependencies": {
@@ -21,7 +23,9 @@
     "@angular/forms": "~9.0.0-rc.7",
     "@angular/platform-browser": "~9.0.0-rc.7",
     "@angular/platform-browser-dynamic": "~9.0.0-rc.7",
+    "@angular/pwa": "^0.803.21",
     "@angular/router": "~9.0.0-rc.7",
+    "@angular/service-worker": "~9.0.0-rc.7",
     "@ngneat/until-destroy": "^7.1.0",
     "@types/jwt-decode": "^2.2.1",
     "jwt-decode": "^2.2.0",
@@ -37,6 +41,7 @@
     "@types/jasmine": "~3.4.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
+    "angular-http-server": "^1.9.0",
     "codelyzer": "^5.1.2",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",

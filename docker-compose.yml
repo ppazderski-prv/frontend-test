@@ -8,6 +8,7 @@ services:
     ports:
       - "4200:4200"
       - "9876:9876"
+      - "8080:8080"
   backend:
     build: docker/backend
     user: "1000:1000"
